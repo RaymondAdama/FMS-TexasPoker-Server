@@ -1,0 +1,8 @@
+服务端Poker类定义
+
+Poker.type;  //牌型
+Poker.number;//牌值
+poker.type = "hongtao"; //红桃
+poker.type = "heitao";  //黑桃
+poker.type = "fangpian"; //方块，方片
+poker.type = "caohua";   //草花，梅花

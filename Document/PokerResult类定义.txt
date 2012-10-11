@@ -1,0 +1,11 @@
+服务端PokerResult类定义。牌局结束之后，算分结果的对象类定义。
+
+//牌型定义，具体规则是：皇家同花顺（9）>同花顺（8）>四条（7）>葫芦（6）>同花（5）>顺子（4）>三条（3）>两对（2）>一对（1）>高牌（0）
+//如果是所有人弃牌，牌型为 10。分值为10亿。
+pokerResult.pokerType; 
+
+//牌型的 main /slave /third 均为数组类型。数组最大长度为5。
+pokerResult.main; //牌型主牌。构成牌型主要的牌。例如，牌型两对，主牌就是最大的对子
+pokerResult.slave; //牌型的副牌，某些牌型没有此选项。例如顺子系列。
+pokerResult.third;
+pokerResult.pokerScore;  //牌型分值。用于比牌。number类型。分值越大，牌越大。

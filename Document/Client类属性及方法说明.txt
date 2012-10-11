@@ -1,0 +1,11 @@
+﻿Client类属性及方法说明：
+Client类为Adobe服务端原生类，并作如下扩展
+name="";    				//显示名称
+totalbalance = 50000; 		//账户总余额
+currentbalance = 20000;   	//当前携带筹码值;
+status = "idle"; 			//用户状态，后期基本不使用。"idle"/looking/gaming/prepair
+roomindex = -1;				//用户所在桌号。默认为-1，代表大厅。
+sitindex = -1;				//用户的座位号。默认为-1，代表无座。
+giveup = -1;                //用户放弃的轮次，默认-1为没有放弃，0-3分别代表第0-3轮作出放弃。
+hyuid = id;					//海游用户ID。唯一ID。不会因为断线发生变化。
+myPoker = null;				//在德州扑克中，代表自己的2张牌，值为数组。

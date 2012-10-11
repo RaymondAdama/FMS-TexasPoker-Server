@@ -1,0 +1,34 @@
+﻿ShareObject类型的桌子属性及方法说明：
+为区别起见，我们将此类型，称作TableSO。
+
+TableSO.id; //唯一标识
+TableSO.name;//显示名称
+TableSO.bigBlind;/*大盲注*/
+TableSO.type;/*桌子类型，0为系统固定，1为用户自定义*/
+TableSO.isLocked;//是否加锁
+//注：Password 属性在网络上不予传输。
+TableSO.password;//如果加锁，这里设置口令
+TableSO.creatTime;  //时间戳。此值服务器保存。
+TableSO.createrName; /*建立者也就是房主，使用HYUID字段，目前与Client.ID相同*/
+
+//以下6个属性，代表 桌子上的6个位置。同时，每个位置的值为sitClass类型的对象。
+//关于位置被赋值的sitClass属性，请参阅sitClass属性及方法说明。
+TableSO.sit0;
+TableSO.sit1;
+TableSO.sit2;
+TableSO.sit3;
+TableSO.sit4;
+TableSO.sit5;
+
+TableSO.tableStatus  //桌子的状态，0-空闲,1-准备开始，2-开始，3-游戏结束
+TableSO.pokerTemplate //本桌使用的牌。数组类型。初始化的时候已经洗好，同时会随着游戏的变化减小
+TableSO.gameStarttime //准备阶段后，此属性会被赋值。此值代表从此时开始5秒倒计时。number类型。
+TableSO.publicPoker //公共牌，数组
+TableSO.roundStatus //当前轮次。int值。
+TableSO.visitor			//本桌的观看者。数组
+TableSO.tableTotalbet		//游戏开始后此数值变化。本桌总池。本次设计，无边池。(20120918修改属性名，以便区分)
+
+//20120918增加
+TableSO.tableUsers;  //记录在游戏开始的时候，一共有多少个玩家参与游戏。
+
+

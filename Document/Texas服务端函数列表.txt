@@ -1,0 +1,134 @@
+﻿注1：公共约定函数名的第二个自然语言单词首字母大写。
+注2：如无特殊说明，函数返回值为对象，包括2个属性，errID 和 Content。
+     errID如大于99，即代表错误。errID==1为正确。相当于true。
+本文档更新日期：2012年10月11日。版本为 Version2
+
+/**
+ *  getRoomList消息，客户端请求房间列表。服务端返回房间列表数组.
+ */
+Client.getRoomList = function ()
+
+/**
+ * getClientlist消息，请求用户列表。返回服务端保存的所有Client对象
+ */
+Client.getClientlist = function ()
+
+
+/**
+ * getMyself消息，请求自己的对象。返回服务端保存的Client对象
+ */
+Client.getMyself = function ()
+
+
+/**
+ * addSOproperty 函数，客户端增加或者设置SO 的属性；
+ */
+Client.addSOproperty = function (propName, Value)
+
+/**
+ * delSOproperty 函数，客户端删除SO 的属性；
+ */
+Client.delSOproperty = function (propName)
+
+
+/**
+ * buyChip消息，客户端调用，携带筹码（购买筹码）消息
+ */
+Client.buyChip = function (chipnum)
+
+/**
+ *  createRoom 函数, 客户端带入的参数为对象，如果有错误，服务端返回Null ，否则，服务端返回Table对象。
+ *  并将此对象保存到tableList 数组。 +2000 的作用是 保持自定义桌子的 ID 大于 2000.
+ */
+Client.createRoom = function (tableobj)
+
+/**
+ * enterRoom, 假如房间序号为 -1，那就是相当于 leaveRoom。
+ * version2 ：本版本开始支持房间密码。
+ * 此处的Room 实际上是桌子。
+ * @param tableID, Table对象的ID值，整数，允许为负
+ * @param password, 房间密码。
+ */
+Client.enterRoom = function (tableID,password)
+
+/**
+ *  sitDown 消息。客户端在进入房间后，需要坐下的时候使用。
+ *  version2：增加了客户端的当前携带的检查。如果携带值小于大盲注，不允许坐下。
+ */
+Client.sitDown = function (index)
+
+/**
+ *  standUp 消息。客户端在进入房间后，需要坐下的时候使用。
+ */
+Client.standUp = function ()
+
+/**
+ *  prepairGame 消息。客户端在进入房间后，需要坐下的时候使用。
+ */
+Client.prepairGame = function (tableID)
+
+/**
+ *  letmePlay 消息，客户端调用，用于用户在等待上一局结束后调用。将用户从等待队列转向参与游戏
+ *  Version2 ： 服务端增加了在执行结束后，检查是否能开始游戏的功能。
+ */
+Client.letmePlay = function ()
+
+/**
+ * startGame消息。在游戏进入预准备阶段后被调用。代表游戏真正开始。初始化游戏中的牌。
+ */
+Client.startGame = function ()
+
+/**
+ * xiaZu消息。玩家进行下注，不区分跟牌等类型，只判断是否能下注，如果是过牌，参数为0。
+ */
+Client.xiaZu = function (betNum, betType)
+
+/**
+ * giveUp消息。玩家盖牌时调用。
+ */
+Client.giveUp = function ()
+
+/**
+ * changeRound消息。由座位号最小的玩家负责调用，引导牌局进行。
+ */
+Client.changeRound = function (roundNum, key)
+
+/**
+ * getMypoker 消息，客户端调用，获取自己的牌
+ */
+Client.getMypoker = function ()
+
+/**
+ * sendMsg消息。玩家说话的时候调用。此处只需要传输内容给服务端。服务端组合后，使用usermsgClass类写入SO
+ */
+Client.sendMsg = function (message)
+
+/**
+ * gameOver 消息，游戏结束时调用
+ */
+Client.gameOver = function (chargeMan - key)
+
+/**
+ *  resetTable 消息，客户端在游戏结束后调用或者，认为需要的时候 调用。
+ *  resetTable会清理包括观看者在内的所有用户。调用此函数后，需要重新进入房间。
+ *  key == "d96ba302e0c223805ddd2d2f2d45c714"
+ */
+Client.resetTable = function (key)
+
+/**
+ * syncTime 函数，主要用于修正和服务端的时间差。以便精确控制。
+ */
+Client.syncTime = function ()
+
+/**
+ * requestCharge 函数，客户端在游戏开始时，或者原先的ChargeMan 断线等情况时使用。维护游戏的正常进行。
+ */
+Client.requestCharge = function ()
+
+/**
+ * cleanPerround函数，每局游戏结束之后，调用的清理函数
+ * 此函数与resetTable 不同的是，不会清理观看者。也不会
+ * 清理在座的未断线的用户。
+ * key == "1adb0262d7491616cec3f998fc8b0c8a"
+ */
+Client.cleanPerround = function (tableID, key)

@@ -1,0 +1,12 @@
+﻿sitClass类属性及方法说明：
+sitClass 类为 桌子的sit（0-5）属性中存储的对象类型。
+
+sitClass.prototype.playing;        //值为Client类。表示当前正在游戏的用户
+sitClass.prototype.betRecord;	   //数组，存储当前游戏，每轮的下注总额
+sitClass.prototype.poker1;			//亮牌时使用，不亮牌，及游戏进行中不能使用。
+sitClass.prototype.poker2;			//同上。
+sitClass.prototype.waiting;			//正在等待下一轮开始游戏的用户。
+sitClass.prototype.winScore;		//输赢得分。
+sitClass.prototype.pokerType;		//最终的牌型。
+sitClass.prototype.gameStatus;		//gameStaust = (-1--init,0-3 ,the round that this sit giveup)*/用户放弃的轮次，默认-1为没有放弃，0-3分别代表第0-3轮作出放弃。
+sitClass.prototype.refresh;			//清理本位置。

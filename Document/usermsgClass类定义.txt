@@ -1,0 +1,5 @@
+服务端usermsgClass类定义。是聊天信息使用的类。
+
+usermsgClass.userName; //显示名称
+usermsgClass.userID;   //标识
+usermsgClass.content;  //内容
